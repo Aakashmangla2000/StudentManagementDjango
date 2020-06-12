@@ -9,8 +9,11 @@
     <h1>Student</h1>
     <h2>Name: {{object.name}}</h2>
     <h2>Roll number: {{object.roll_number}}</h2>
-    <h2>College: {{object.college}}</h2>
-    <p>To update/delete student go to student_(delete/update)/(pk)</p>
+    <h2>College: <a href="{% url 'college' object.college.pk %}">{{object.college}}</a></h2>
+    <h3><a href="{% url 'student_update' student.pk%}">Update Details</a></h3>
+    <h3><a href="{% url 'student_delete' student.pk%}">Delete</a></h3>
+
+    <h5><a href="{% url 'index' %}">Go back to Home</a></h5>
 
 </body>
 </html>
